@@ -3,7 +3,7 @@
 
 class WildDuck:
     def quack(slrf) -> str:
-        return "Quack!"
+        return "Quack!!!!!!!!!"
 
     def some_decoy_method(self):
         pass
