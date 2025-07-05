@@ -1,1 +1,1 @@
-print("metal")
+print("metal 666")
