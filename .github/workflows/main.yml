@@ -1,0 +1,36 @@
+name: CI-CD Pipeline-to-aws-beanstalk
+env:
+  EB_PACKAGE_S3_BUCKET : "name our bucket akdkdk lal lalala"
+  EB_APPLICATION_NAME  : "MyPython"
+  EB_ENVIRONMENT_NAME  : "My-Python-name"
+  DEPLOY_PACKAGE_NAME  : "flask-app ${{ github.sha }}.zip" 
+  AWS_REGION_NAME      : "us-west-2"
+
+
+
+
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  my_ci_part:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git clone our repo
+      - uses: actions/checkout@v1
+      
+      - name: Run a one-line script
+        run: echo Hello, world!!!
+        
+      # - name: Run a multi-line script
+      #   run: |
+      #     echo Add other actions to build,
+      #     echo test, and deploy your project.
+      - name: Create zip deployment package
+        run: zip -r ${{ env.DEPLOY_PACKAGE_NAME }}./-x*.git*
+        
+      
