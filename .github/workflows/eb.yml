@@ -1,0 +1,8 @@
+name: Ivan eblan
+
+
+on: 
+  push:
+    branches:
+      - master
+  
